@@ -13,7 +13,7 @@ namespace HotelAssessment
         private const string viewGuests = "3";
         private const string exit = "4";
 
-        //int capacity = StartUp.Initial();
+        int capacity = StartUp.Initial();       //how to use capacity everywhere
         
         public void Run()
         {
@@ -47,7 +47,6 @@ namespace HotelAssessment
         }
         private void ViewGuests() //private void ViewGuests(string[] currentGR)
         {
-            int capacity = StartUp.Initial();
             Console.Clear();
             Console.WriteLine("View Guests");
             Console.WriteLine("==============");
@@ -62,18 +61,24 @@ namespace HotelAssessment
 
         public string CheckIn()
         {
-            int capacity = StartUp.Initial();
             //cosider moving the asking for a task into another method
             Console.Clear();
+            
             Console.WriteLine("Guest Check In");
             Console.WriteLine("==============");
             Console.Write("Guest Name: ");
             string newGuest = Console.ReadLine();
             Console.Write($"Capsule #[1-{capacity}]: ");
             string newRoom = Console.ReadLine();
+            int nRoom = int.Parse(newRoom);
+
+            Client client = new Client();
+            client.name = newGuest;
+            client.rNum = nRoom;
+
             string GR = newRoom + "," + newGuest;
 
-            Arrays.inArray();
+            //Arrays.inArray();
 
             Console.Write("Press any key to continue ");
             
@@ -84,7 +89,6 @@ namespace HotelAssessment
 
         private void CheckOut()
         {
-            int capacity = StartUp.Initial();
             Console.Clear();
             Console.WriteLine("Guest Check Out");
             Console.WriteLine("================");

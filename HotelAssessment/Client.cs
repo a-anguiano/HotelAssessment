@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace HotelAssessment
 {
-    class Program
+    class Client
     {
-        static void Main()
-        {
-            //StartUp.Initial();
-            Menu m = new Menu();
-            m.Run();
-        }
+       public int rNum { get; set; }
+        public string name { get; set; }
     }
 }

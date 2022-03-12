@@ -18,8 +18,7 @@ namespace HotelAssessment
             Console.WriteLine("==========================");
             Console.WriteLine("Press any key to continue ");
             Console.ReadKey();
-            //Menu m = new Menu();
-            //m.Run();
+            //int globalCapacity = capacity;
             return capacity;
         }
     }
