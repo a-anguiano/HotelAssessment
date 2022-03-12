@@ -12,35 +12,39 @@ namespace HotelAssessment
         {
             int capacity = 30; //test, lower capacity
             string[] arrayGR = new string[capacity];
-            //testing for CheckOut
-            arrayGR[4] = "name";    //room 5, index 4
+            //testing for ViewGuests
+            arrayGR[4] = "room 5 name";    //room 5, index 4
+            arrayGR[6] = "room 7 name";
 
             //test check in
             bool isRunning = true;
 
             while (isRunning)
             {
-                Console.WriteLine("Guest Check Out");
-                Console.WriteLine("================");
+                Console.WriteLine("View Guests");
+                Console.WriteLine("==============");
                 Console.Write($"Capsule #[1-{capacity}]: ");
-                int guestLeaveNum = int.Parse(Console.ReadLine());
-                int index = guestLeaveNum - 1;
+                int guestView = int.Parse(Console.ReadLine());
+                Console.WriteLine($"View Guests {guestView}");
 
-                if(arrayGR[index] != null)
+                int index = guestView - 1;
+                int low5 = index - 5;
+                int high5 = index + 5;
+
+                for (int i = low5; i <= high5; i++)
                 {
-                    //success statement
-                    Console.WriteLine("Success :)");
-                    Console.WriteLine($"{arrayGR[index]} checked out from capsule #{guestLeaveNum}.");
+                    if (String.IsNullOrEmpty(arrayGR[i]))
+                    {
+                        arrayGR[i] = "[unoccupied]";
+                    }
+
+                    Console.WriteLine($"{i+1}: {arrayGR[i]}");
                 }
-                else
-                {
-                    Console.WriteLine("Error :(");
-                    Console.WriteLine($"Capsule #{guestLeaveNum} is unoccupied.");
-                    isRunning = false;
-                }
+
                 Console.Write("Press any key to continue ");
                 Console.ReadKey();
                 Console.Clear();
+                isRunning = false;
             }
         }
     }
