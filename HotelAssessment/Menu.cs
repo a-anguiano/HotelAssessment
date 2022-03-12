@@ -27,7 +27,7 @@ namespace HotelAssessment
                 switch (choice)
                 {
                     case checkIn:
-                        CheckIn();  //CheckIn(guestAndRoom)
+                        CheckInArray();  //CheckIn(guestAndRoom)
                         break;
                     case checkOut:
                         CheckOut();         //see 
@@ -44,6 +44,32 @@ namespace HotelAssessment
                         break;
                 }
             }
+        }
+
+        void CheckInArray()    //string[]?
+        {
+            string[] arrayGR = new string[capacity];           //hmmmmmm what if Check I isn't first option
+            string GR = CheckIn();
+            int commaIndex = GR.IndexOf(",");
+            string newRoom = GR.Substring(0, commaIndex - 1);
+            string newGuest = GR.Substring(commaIndex, GR.Length - 1);      //length too long
+            int newNumRoom = int.Parse(newRoom);
+
+            if (arrayGR[newNumRoom] == null)
+            {
+                Console.WriteLine("Success :)");
+                Console.WriteLine($"{newGuest} is booked in capsule #{newRoom}.");
+                arrayGR[newNumRoom] = GR;
+            }
+            else
+            {
+                Console.WriteLine("Error :(");
+                Console.WriteLine($"Capsule #{newRoom} is occupied.");
+            }
+            Console.Write("Press any key to continue ");
+
+            Console.ReadKey();
+            Console.Clear();
         }
         private void ViewGuests() //private void ViewGuests(string[] currentGR)
         {
@@ -70,20 +96,8 @@ namespace HotelAssessment
             string newGuest = Console.ReadLine();
             Console.Write($"Capsule #[1-{capacity}]: ");
             string newRoom = Console.ReadLine();
-            int nRoom = int.Parse(newRoom);
-
-            Client client = new Client();
-            client.name = newGuest;
-            client.rNum = nRoom;
 
             string GR = newRoom + "," + newGuest;
-
-            //Arrays.inArray();
-
-            Console.Write("Press any key to continue ");
-            
-            Console.ReadKey();
-            Console.Clear();
             return GR;
         }   //private string[] CheckIn(string[] currentGR)
 
@@ -127,5 +141,6 @@ namespace HotelAssessment
             Console.Write("Choose option [1-4]: ");
             return Console.ReadLine();
         }
+
     }
 }
