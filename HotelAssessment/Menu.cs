@@ -14,7 +14,22 @@ namespace HotelAssessment
         private const string exit = "4";
 
         int capacity = StartUp.Initial();       //how to use capacity everywhere
-        
+        int i = 0;
+        private string[] CreateArray()
+        {
+            if (i == 0)
+            {
+                string[] arrayGR = new string[capacity];
+                i++;
+                return arrayGR;
+            }
+            else
+            {
+                string[] arrayGR = CheckIn();
+                return arrayGR;
+            }
+        }
+
         public void Run()
         {
             Console.Clear();
@@ -27,7 +42,7 @@ namespace HotelAssessment
                 switch (choice)
                 {
                     case checkIn:
-                        CheckInArray();  //CheckIn(guestAndRoom)
+                        CheckIn();  //CheckIn(guestAndRoom)
                         break;
                     case checkOut:
                         CheckOut();         //see 
@@ -45,32 +60,6 @@ namespace HotelAssessment
                 }
             }
         }
-
-        void CheckInArray()    //string[]?
-        {
-            string[] arrayGR = new string[capacity];           //hmmmmmm what if Check I isn't first option
-            string GR = CheckIn();
-            int commaIndex = GR.IndexOf(",");
-            string newRoom = GR.Substring(0, commaIndex - 1);
-            string newGuest = GR.Substring(commaIndex, GR.Length - 1);      //length too long
-            int newNumRoom = int.Parse(newRoom);
-
-            if (arrayGR[newNumRoom] == null)
-            {
-                Console.WriteLine("Success :)");
-                Console.WriteLine($"{newGuest} is booked in capsule #{newRoom}.");
-                arrayGR[newNumRoom] = GR;
-            }
-            else
-            {
-                Console.WriteLine("Error :(");
-                Console.WriteLine($"Capsule #{newRoom} is occupied.");
-            }
-            Console.Write("Press any key to continue ");
-
-            Console.ReadKey();
-            Console.Clear();
-        }
         private void ViewGuests() //private void ViewGuests(string[] currentGR)
         {
             Console.Clear();
@@ -85,8 +74,10 @@ namespace HotelAssessment
             Console.Clear();
         }
 
-        public string CheckIn()
+        private string[] CheckIn()
         {
+            string[] arrayGR = CreateArray();        //not sure
+
             //cosider moving the asking for a task into another method
             Console.Clear();
             
@@ -95,10 +86,27 @@ namespace HotelAssessment
             Console.Write("Guest Name: ");
             string newGuest = Console.ReadLine();
             Console.Write($"Capsule #[1-{capacity}]: ");
-            string newRoom = Console.ReadLine();
+            int newRoom = int.Parse(Console.ReadLine());
+            int i = newRoom - 1;
+                       //hmmmmmm what if Check I isn't first option
 
-            string GR = newRoom + "," + newGuest;
-            return GR;
+                if (arrayGR[i] != null)
+                {
+                Console.WriteLine("Error :(");
+                Console.WriteLine($"Capsule #{newRoom} is occupied.");
+                }                                                               //update arrayGR
+                else
+                {
+                Console.WriteLine("Success :)");
+                Console.WriteLine($"{newGuest} is booked in capsule #{newRoom}.");
+                arrayGR[i] = newGuest;
+                Console.WriteLine($"{arrayGR[i]}");
+                }
+
+            Console.Write("Press any key to continue ");
+            Console.ReadKey();
+            Console.Clear();
+            return arrayGR;
         }   //private string[] CheckIn(string[] currentGR)
 
         private void CheckOut()
@@ -112,7 +120,7 @@ namespace HotelAssessment
             //success statement
             Console.WriteLine("Success :)");
             Console.WriteLine($"NAME checked out from capsule #{guestLeaveNum}.");  //interpolation, fix cuz null
-            
+
             Console.Write("Press any key to continue ");
             Console.ReadKey();
             Console.Clear();
