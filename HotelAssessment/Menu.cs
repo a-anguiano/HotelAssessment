@@ -10,41 +10,31 @@ namespace HotelAssessment
     {
         public void Run()
         {
-            int capacity = 30; //test, lower capacity
-            string[] arrayGR = new string[capacity];
-            //testing for ViewGuests
-            arrayGR[4] = "room 5 name";    //room 5, index 4
-            arrayGR[6] = "room 7 name";
-
-            //test check in
+            //test Exit
             bool isRunning = true;
 
             while (isRunning)
             {
-                Console.WriteLine("View Guests");
-                Console.WriteLine("==============");
-                Console.Write($"Capsule #[1-{capacity}]: ");
-                int guestView = int.Parse(Console.ReadLine());
-                Console.WriteLine($"View Guests {guestView}");
+                Console.WriteLine("Exit");
+                Console.WriteLine("=========");
+                Console.WriteLine("Are you sure you want to exit?");
+                Console.WriteLine("All data will be lost");
+                Console.Write("Exit [y/n]: ");
+                string response = Console.ReadLine().ToLower();
 
-                int index = guestView - 1;
-                int low5 = index - 5;
-                int high5 = index + 5;
-
-                for (int i = low5; i <= high5; i++)
+                if (response == "y")
                 {
-                    if (String.IsNullOrEmpty(arrayGR[i]))
-                    {
-                        arrayGR[i] = "[unoccupied]";
-                    }
-
-                    Console.WriteLine($"{i+1}: {arrayGR[i]}");
+                    Console.WriteLine("\n\nGoodbye!");
+                    isRunning = false;
                 }
-
-                Console.Write("Press any key to continue ");
-                Console.ReadKey();
-                Console.Clear();
-                isRunning = false;
+                else
+                {
+                    Console.WriteLine("\nPress any key to continue");
+                    Console.ReadKey();
+                    Console.Clear();
+                    //go back to main menu
+                }
+                
             }
         }
     }
