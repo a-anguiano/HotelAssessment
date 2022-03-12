@@ -14,7 +14,12 @@ namespace HotelAssessment
             Console.WriteLine("==========================");
             Console.Write("Enter the number of capsules available: ");
             int capacity = int.Parse(Console.ReadLine());
-            Console.WriteLine($"There are {capacity} unoccupied capsules ready to be booked.");
+            Console.WriteLine($"\nThere are {capacity} unoccupied capsules ready to be booked.\n");
+            Console.WriteLine("==========================");
+            Console.WriteLine("Press any key to continue ");
+            Console.ReadKey();
+            //Menu m = new Menu();
+            //m.Run();
             return capacity;
         }
     }

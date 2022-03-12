@@ -13,8 +13,8 @@ namespace HotelAssessment
         private const string viewGuests = "3";
         private const string exit = "4";
 
-        int capacity = StartUp.Initial();
-        //string[] guestAndRoom = new string[capacity];
+        //int capacity = StartUp.Initial();
+        
         public void Run()
         {
             Console.Clear();
@@ -22,7 +22,7 @@ namespace HotelAssessment
 
             while (running)
             {
-                string choice = BuildMenu().ToUpper();
+                string choice = BuildMenu();    //.ToUpper()
 
                 switch (choice)
                 {
@@ -47,19 +47,22 @@ namespace HotelAssessment
         }
         private void ViewGuests() //private void ViewGuests(string[] currentGR)
         {
+            int capacity = StartUp.Initial();
             Console.Clear();
             Console.WriteLine("View Guests");
             Console.WriteLine("==============");
             Console.Write($"Capsule #[1-{capacity}]: ");
             string guestView = Console.ReadLine();
-            Console.WriteLine($"View Guests {guestView}");
+            Console.WriteLine("\nCapsule: Guest");
+            Console.WriteLine($"{guestView}");
             Console.WriteLine("Press any key to continue ");
             Console.ReadKey();
             Console.Clear();
         }
 
-        private void CheckIn()
+        public string CheckIn()
         {
+            int capacity = StartUp.Initial();
             //cosider moving the asking for a task into another method
             Console.Clear();
             Console.WriteLine("Guest Check In");
@@ -68,18 +71,20 @@ namespace HotelAssessment
             string newGuest = Console.ReadLine();
             Console.Write($"Capsule #[1-{capacity}]: ");
             string newRoom = Console.ReadLine();
+            string GR = newRoom + "," + newGuest;
 
-            //success statement
-            Console.WriteLine("Success :)");
-            Console.WriteLine($"{newGuest} is booked in capsule #{newRoom}.");
+            Arrays.inArray();
+
             Console.Write("Press any key to continue ");
             
             Console.ReadKey();
             Console.Clear();
+            return GR;
         }   //private string[] CheckIn(string[] currentGR)
 
         private void CheckOut()
         {
+            int capacity = StartUp.Initial();
             Console.Clear();
             Console.WriteLine("Guest Check Out");
             Console.WriteLine("================");
