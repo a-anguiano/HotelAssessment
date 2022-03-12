@@ -10,14 +10,14 @@ namespace HotelAssessment
     {
         public void ViewGuest()
         {
-            int capacity = 30; //test, lower capacity
+            Console.Clear();
+            int capacity = 30; //test
             string[] arrayGR = new string[capacity];
             //testing for ViewGuests
             arrayGR[4] = "room 5 name";    //room 5, index 4
             arrayGR[6] = "room 7 name";
             arrayGR[29] = "room 30 name";
 
-            //test check in
             bool isRunning = true;
 
             while (isRunning)
@@ -29,9 +29,6 @@ namespace HotelAssessment
 
                 int low5 = guestView - 5;
                 int high5 = guestView + 5;
-
-                // +5 is over capacity  //capicity is index 29 in example
-                //array.Length, index 0-29 = length of 30
 
                 if (guestView > capacity || guestView <= 0)
                 {
@@ -50,10 +47,9 @@ namespace HotelAssessment
                     }
                 }
 
-                // -5 is less than zero         ex. room 1, index 0
-                else if (low5 < 0)     //check  && high5 < capacity
+                else if (low5 < 0)
                 {
-                    for (int i = 0; i < high5; i++)     //check
+                    for (int i = 0; i < high5; i++)
                     {
                         if (String.IsNullOrEmpty(arrayGR[i]))
                         {
