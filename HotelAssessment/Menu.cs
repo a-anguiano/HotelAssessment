@@ -10,37 +10,34 @@ namespace HotelAssessment
     {
         public void Run()
         {
-            int capacity = 100; //test
+            int capacity = 30; //test, lower capacity
             string[] arrayGR = new string[capacity];
+            //testing for CheckOut
+            arrayGR[4] = "name";    //room 5, index 4
 
             //test check in
             bool isRunning = true;
 
             while (isRunning)
             {
-                Console.WriteLine("Guest Check In");
-                Console.WriteLine("==============");
-                Console.Write("Guest Name: ");
-                string newGuest = Console.ReadLine();
+                Console.WriteLine("Guest Check Out");
+                Console.WriteLine("================");
                 Console.Write($"Capsule #[1-{capacity}]: ");
-                int newRoom = int.Parse(Console.ReadLine());
-                int i = newRoom - 1;
-                //hmmmmmm what if Check I isn't first option
+                int guestLeaveNum = int.Parse(Console.ReadLine());
+                int index = guestLeaveNum - 1;
 
-                if (arrayGR[i] != null)
+                if(arrayGR[index] != null)
                 {
-                    Console.WriteLine("Error :(");
-                    Console.WriteLine($"Capsule #{newRoom} is occupied.");
-                    isRunning = false;
-                }                                                               //update arrayGR
+                    //success statement
+                    Console.WriteLine("Success :)");
+                    Console.WriteLine($"{arrayGR[index]} checked out from capsule #{guestLeaveNum}.");
+                }
                 else
                 {
-                    Console.WriteLine("Success :)");
-                    Console.WriteLine($"{newGuest} is booked in capsule #{newRoom}.");
-                    arrayGR[i] = newGuest;
-                    Console.WriteLine($"{arrayGR[i]}");
+                    Console.WriteLine("Error :(");
+                    Console.WriteLine($"Capsule #{guestLeaveNum} is unoccupied.");
+                    isRunning = false;
                 }
-
                 Console.Write("Press any key to continue ");
                 Console.ReadKey();
                 Console.Clear();
