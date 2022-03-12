@@ -40,9 +40,8 @@ namespace HotelAssessment
                         g.ViewGuest();      //see
                         break;
                     case exit:
-                        //Exit();
                         Exit e = new Exit();
-                        running = e.ExitProgram();
+                        e.ExitProgram();
                         break;
                     default:
                         HandleUnknownInput();
