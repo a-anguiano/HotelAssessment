@@ -42,8 +42,7 @@ namespace HotelAssessment
                     case exit:
                         //Exit();
                         Exit e = new Exit();
-                        e.ExitProgram();
-                        running = false;    //move to exit
+                        running = e.ExitProgram();
                         break;
                     default:
                         HandleUnknownInput();
