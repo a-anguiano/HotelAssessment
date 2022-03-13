@@ -13,15 +13,15 @@ namespace HotelAssessment
         private const string viewGuests = "3";
         private const string exit = "4";
 
-        public void Run()
+        public void Run(string[] guestAndRoom, int capacity)
         {
 
             //test
-            int capacity = 30;
-            string[] guestAndRoom = new string[capacity];
-            guestAndRoom[4] = "room 5 name";    //room 5, index 4
-            guestAndRoom[6] = "room 7 name";    //room 7, index 6    
-            guestAndRoom[29] = "room 30 name";
+            //int capacity = 30;
+            //string[] guestAndRoom = new string[capacity];
+            //guestAndRoom[4] = "room 5 name";    //room 5, index 4
+            //guestAndRoom[6] = "room 7 name";    //room 7, index 6    
+            //guestAndRoom[29] = "room 30 name";
 
             Console.Clear();
             bool running = true;
@@ -46,7 +46,7 @@ namespace HotelAssessment
                         break;
                     case exit:
                         Exit e = new Exit();
-                        e.ExitProgram();
+                        e.ExitProgram(guestAndRoom, capacity);
                         break;
                         default:
                         HandleUnknownInput();
@@ -68,7 +68,7 @@ namespace HotelAssessment
     }
     private void HandleUnknownInput()
     {
-            Console.WriteLine("Wrong");         //adapt to request valid input, maybe not needed right now
+            Console.WriteLine("\n\nWrong");         //adapt to request valid input, maybe not needed right now
     }
     }
 }

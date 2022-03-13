@@ -8,7 +8,7 @@ namespace HotelAssessment
 {
     class Exit
     {
-        public void ExitProgram()
+        public void ExitProgram(string[] arrayGR, int capacity)
         {
             bool isRunning = true;
 
@@ -33,7 +33,7 @@ namespace HotelAssessment
                     Console.ReadKey();
                     Console.Clear();
                     Menu m = new Menu();
-                    m.Run();
+                    m.Run(arrayGR, capacity);       //names of parameter/arguments
                 }
             }
         }
