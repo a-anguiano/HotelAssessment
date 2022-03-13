@@ -91,6 +91,8 @@ namespace HotelAssessment
                 Console.ReadKey();
                 Console.Clear();
                 isRunning = false;
+                //Menu m = new Menu();
+                //m.Run();
             }
         }
     }

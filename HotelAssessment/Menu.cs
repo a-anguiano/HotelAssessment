@@ -53,7 +53,8 @@ namespace HotelAssessment
                         i.CheckIn(guestAndRoom, capacity);
                         break;
                     case checkOut:
-                        //CheckOut();         //see 
+                        GuestCheckOut o = new GuestCheckOut();
+                        o.CheckOut(guestAndRoom, capacity);
                         break;
                     case viewGuests:
                         GuestList g = new GuestList();
@@ -63,7 +64,7 @@ namespace HotelAssessment
                         Exit e = new Exit();
                         e.ExitProgram();
                         break;
-                    default:
+                        default:
                         HandleUnknownInput();
                         break;
                 }

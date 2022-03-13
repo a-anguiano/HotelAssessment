@@ -10,8 +10,6 @@ namespace HotelAssessment
     {
         public void CheckIn(string[] arrayGR, int capacity)
         {
-
-            //test check in
             bool isRunning = true;
 
             while (isRunning)
@@ -21,10 +19,10 @@ namespace HotelAssessment
                 Console.WriteLine("==============");
                 Console.Write("Guest Name: ");
                 string newGuest = Console.ReadLine();
-                Console.Write($"Capsule #[1-{capacity}]: ");
+                Console.Write($"Capsule #[1-{capacity}]: \n\n");
                 int newRoom = int.Parse(Console.ReadLine());
                 int i = newRoom - 1;
-                //hmmmmmm what if Check I isn't first option
+                //hmmmmmm what if Check In isn't first option
 
                 if (arrayGR[i] != null)
                 {
@@ -37,12 +35,12 @@ namespace HotelAssessment
                     Console.WriteLine("Success :)");
                     Console.WriteLine($"{newGuest} is booked in capsule #{newRoom}.");
                     arrayGR[i] = newGuest;
-                    Console.WriteLine($"{arrayGR[i]}");
                 }
 
                 Console.Write("Press any key to continue ");
                 Console.ReadKey();
                 Console.Clear();
+                isRunning = false;
             }
         }
     }
