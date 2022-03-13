@@ -8,17 +8,11 @@ namespace HotelAssessment
 {
     class GuestList
     {
-        public void ViewGuest(int capacity)
+        public void ViewGuest(string[] arrayGR, int capacity)
         {
             Console.Clear();
-            
-            //int capacity = 30; //test
-            string[] arrayGR = new string[capacity];
             //testing for ViewGuests
-            arrayGR[4] = "room 5 name";    //room 5, index 4
-            arrayGR[6] = "room 7 name";
-            arrayGR[29] = "room 30 name";
-
+           
             bool isRunning = true;
 
             while (isRunning)
@@ -30,6 +24,7 @@ namespace HotelAssessment
 
                 int low5 = guestView - 5;
                 int high5 = guestView + 5;
+                string[] guestViewArray = arrayGR;     //label null as unnoccupied
 
                 if (guestView > capacity || guestView <= 0)
                 {
@@ -42,9 +37,14 @@ namespace HotelAssessment
                     {
                         if (String.IsNullOrEmpty(arrayGR[i]))
                         {
-                            arrayGR[i] = "[unoccupied]";
+                            guestViewArray[i] = "[unoccupied]";
+                            Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
+                            guestViewArray[i] = null;
                         }
-                        Console.WriteLine($"{i + 1}: {arrayGR[i]}");
+                        else
+                        {
+                            Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
+                        }
                     }
                 }
 
@@ -54,10 +54,14 @@ namespace HotelAssessment
                     {
                         if (String.IsNullOrEmpty(arrayGR[i]))
                         {
-                            arrayGR[i] = "[unoccupied]";
+                            guestViewArray[i] = "[unoccupied]";
+                            Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
+                            guestViewArray[i] = null;
                         }
-
-                        Console.WriteLine($"{i + 1}: {arrayGR[i]}");
+                        else
+                        {
+                            Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
+                        }
                     }
                 }
 
@@ -67,10 +71,14 @@ namespace HotelAssessment
                     {
                         if (String.IsNullOrEmpty(arrayGR[i]))
                         {
-                            arrayGR[i] = "[unoccupied]";
+                            guestViewArray[i] = "[unoccupied]";
+                            Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
+                            guestViewArray[i] = null;
                         }
-
-                        Console.WriteLine($"{i + 1}: {arrayGR[i]}");
+                        else
+                        {
+                            Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
+                        }
                     }
                 }
 
@@ -80,10 +88,15 @@ namespace HotelAssessment
                     {
                         if (String.IsNullOrEmpty(arrayGR[i]))
                         {
-                            arrayGR[i] = "[unoccupied]";
+                            guestViewArray[i] = "[unoccupied]";
+                            Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
+                            guestViewArray[i] = null;
                         }
-
-                        Console.WriteLine($"{i + 1}: {arrayGR[i]}");
+                        else
+                        {
+                            Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
+                        }
+                        
                     }
                 }
 
@@ -91,8 +104,6 @@ namespace HotelAssessment
                 Console.ReadKey();
                 Console.Clear();
                 isRunning = false;
-                //Menu m = new Menu();
-                //m.Run();
             }
         }
     }

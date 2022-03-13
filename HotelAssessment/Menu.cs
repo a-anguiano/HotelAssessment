@@ -15,28 +15,12 @@ namespace HotelAssessment
 
         public void Run()
         {
-            //need to fix this set-up
-            bool initial = true;
-            while (initial)
-            {
-                Console.WriteLine("Welcome to Capsule-Capsule");
-                Console.WriteLine("==========================");
-                Console.Write("Enter the number of capsules available: ");
-                //
-                int capacitytest = int.Parse(Console.ReadLine());
-                Console.WriteLine($"\nThere are {capacitytest} unoccupied capsules ready to be booked.");
-
-                Console.Write("\n\nPress any key to continue ");
-                Console.ReadKey();
-                Console.Clear();
-                initial = false;
-            }
 
             //test
             int capacity = 30;
             string[] guestAndRoom = new string[capacity];
             guestAndRoom[4] = "room 5 name";    //room 5, index 4
-            guestAndRoom[6] = "room 7 name";
+            guestAndRoom[6] = "room 7 name";    //room 7, index 6    
             guestAndRoom[29] = "room 30 name";
 
             Console.Clear();
@@ -58,7 +42,7 @@ namespace HotelAssessment
                         break;
                     case viewGuests:
                         GuestList g = new GuestList();
-                        g.ViewGuest(capacity);      
+                        g.ViewGuest(guestAndRoom, capacity);      
                         break;
                     case exit:
                         Exit e = new Exit();

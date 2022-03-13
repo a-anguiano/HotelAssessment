@@ -25,7 +25,7 @@ namespace HotelAssessment
                 if (response == "y")
                 {
                     Console.WriteLine("\n\nGoodbye!");
-                    System.Environment.Exit(1);
+                    Environment.Exit(1);
                 }
                 else
                 {
