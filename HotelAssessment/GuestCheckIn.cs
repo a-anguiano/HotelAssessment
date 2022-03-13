@@ -13,16 +13,13 @@ namespace HotelAssessment
             bool isRunning = true;
 
             while (isRunning)
-            {
+            {               
                 Console.WriteLine("Guest Check In");
                 Console.WriteLine("==============");
                 Console.Write("Guest Name: ");
                 string newGuest = Console.ReadLine();
-                Console.Write($"Capsule #[1-{capacity}]: ");
-                int newRoom = int.Parse(Console.ReadLine());
+                int newRoom = GuestList.EnterRoomNumber($"Capsule #[1-{capacity}]: ", capacity);
                 int i = newRoom - 1;
-
-                //handle non-existing room number
 
                 if (String.IsNullOrEmpty(arrayGR[i]))
                 {
@@ -38,9 +35,7 @@ namespace HotelAssessment
                 {
                     Console.WriteLine("\n\nError :(");
                     Console.WriteLine($"Capsule #{newRoom} is occupied.\n\n");
-                }
-
-                
+                } 
             }
         }
     }
