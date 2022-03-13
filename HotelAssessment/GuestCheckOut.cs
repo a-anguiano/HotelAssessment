@@ -17,8 +17,10 @@ namespace HotelAssessment
                 Console.WriteLine("Guest Check Out");
                 Console.WriteLine("================");
                 Console.Write($"Capsule #[1-{capacity}]: ");
-                int guestLeaveNum = int.Parse(Console.ReadLine());      //later TryParse
+                int guestLeaveNum = int.Parse(Console.ReadLine());      
                 int index = guestLeaveNum - 1;
+
+                //handle non-existing room number //later TryParse, combine GetPositiveInteger and keep with bounds of array
 
                 if (!String.IsNullOrEmpty(arrayGR[index]))
                 {

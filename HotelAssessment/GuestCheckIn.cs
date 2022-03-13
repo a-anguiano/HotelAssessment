@@ -22,6 +22,8 @@ namespace HotelAssessment
                 int newRoom = int.Parse(Console.ReadLine());
                 int i = newRoom - 1;
 
+                //handle non-existing room number
+
                 if (String.IsNullOrEmpty(arrayGR[i]))
                 {
                     Console.WriteLine("\n\nSuccess :)");

@@ -12,9 +12,9 @@ namespace HotelAssessment
             {
                 Console.WriteLine("Welcome to Capsule-Capsule");
                 Console.WriteLine("==========================");
-                Console.Write("Enter the number of capsules available: ");
+                int capacitytest = GetPositiveInteger("Enter the number of capsules available: ");
                 
-                int capacitytest = int.Parse(Console.ReadLine());
+                
                 Console.WriteLine($"\nThere are {capacitytest} unoccupied capsules ready to be booked.");
                 string[] arrayGR = new string[capacitytest];
 
@@ -23,6 +23,33 @@ namespace HotelAssessment
                 Console.Clear();
                 Menu m = new Menu();
                 m.Run(arrayGR,capacitytest);
+            }
+        public static int GetPositiveInteger(string prompt)
+        {
+            bool valid = false;
+            int value;
+
+            do
+            {
+                Console.Write(prompt);
+                if (!int.TryParse(Console.ReadLine(), out value))
+                {
+                    Console.WriteLine("\nThat wasn't a number!\n");
+                }
+                else
+                {
+                    if (value > 0)
+                    {
+                        valid = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nValue must be positive.\n");
+                    }
+                }
+            } while (!valid);
+
+            return value;
         }
     }
 }

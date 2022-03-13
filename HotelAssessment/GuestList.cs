@@ -18,6 +18,8 @@ namespace HotelAssessment
                 Console.Write($"Capsule #[1-{capacity}]: ");
                 int guestView = int.Parse(Console.ReadLine());
 
+                //need to handle non-existing room number, out of bounds basically
+
                 int low5 = guestView - 5;
                 int high5 = guestView + 5;
                 string[] guestViewArray = arrayGR;
