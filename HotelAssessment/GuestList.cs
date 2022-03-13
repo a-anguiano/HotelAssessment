@@ -9,9 +9,7 @@ namespace HotelAssessment
     class GuestList
     {
         public void ViewGuest(string[] arrayGR, int capacity)
-        {
-            Console.Clear();
-           
+        {           
             bool isRunning = true;
             while (isRunning)
             {
@@ -98,7 +96,7 @@ namespace HotelAssessment
                     }
                 }
 
-                Console.Write("Press any key to continue ");
+                Console.Write("\n\nPress any key to continue ");
                 Console.ReadKey();
                 Console.Clear();
                 isRunning = false;

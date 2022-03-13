@@ -14,7 +14,6 @@ namespace HotelAssessment
 
             while (isRunning)
             {
-                Console.Clear();
                 Console.WriteLine("Guest Check Out");
                 Console.WriteLine("================");
                 Console.Write($"Capsule #[1-{capacity}]: ");
@@ -26,16 +25,17 @@ namespace HotelAssessment
                     Console.WriteLine("\n\nSuccess :)");
                     Console.WriteLine($"{arrayGR[index]} checked out from capsule #{guestLeaveNum}.");
                     arrayGR[index] = null;
+                    Console.Write("Press any key to continue ");
+                    Console.ReadKey();
+                    Console.Clear();
+                    isRunning = false;
                 }
                 else
                 {
                     Console.WriteLine("\n\nError :(");
-                    Console.WriteLine($"Capsule #{guestLeaveNum} is unoccupied.");
+                    Console.WriteLine($"Capsule #{guestLeaveNum} is unoccupied.\n\n");
                 }
-                Console.Write("Press any key to continue ");
-                Console.ReadKey();
-                Console.Clear();
-                isRunning = false;
+                
             }
 
         }

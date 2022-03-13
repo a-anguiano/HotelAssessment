@@ -25,18 +25,22 @@ namespace HotelAssessment
                 switch (choice)
                 {
                     case checkIn:
+                        Console.Clear();
                         GuestCheckIn i = new GuestCheckIn();
                         i.CheckIn(guestAndRoom, capacity);
                         break;
                     case checkOut:
+                        Console.Clear();
                         GuestCheckOut o = new GuestCheckOut();
                         o.CheckOut(guestAndRoom, capacity);
                         break;
                     case viewGuests:
+                        Console.Clear();
                         GuestList g = new GuestList();
                         g.ViewGuest(guestAndRoom, capacity);      
                         break;
                     case exit:
+                        Console.Clear();
                         Exit e = new Exit();
                         e.ExitProgram(guestAndRoom, capacity);
                         break;
@@ -60,7 +64,10 @@ namespace HotelAssessment
     }
     private void HandleUnknownInput()
     {
-            Console.WriteLine("\n\nWrong");         //adapt to request valid input, maybe not needed right now
+            Console.WriteLine("\n\nNot a valid input. Please select [1-4]");
+            Console.Write("Press any key to continue ");
+            Console.ReadKey();
+            Console.Clear();
     }
     }
 }
