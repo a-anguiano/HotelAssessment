@@ -13,36 +13,31 @@ namespace HotelAssessment
         private const string viewGuests = "3";
         private const string exit = "4";
 
-        public static int Initial()
-        {
-            Console.WriteLine("Welcome to Capsule-Capsule");
-            Console.WriteLine("==========================");
-            Console.Write("Enter the number of capsules available: ");
-            int capacity = int.Parse(Console.ReadLine());
-            Console.WriteLine($"\nThere are {capacity} unoccupied capsules ready to be booked.");
-
-            Console.Write("\n\nPress any key to continue ");
-            Console.ReadKey();
-            Console.Clear();
-            return capacity;
-        }
         public void Run()
         {
-            //string[] guestAndRoom = new string[capacity];
-            //bool initial = true;
-            //while(initial)
-            //{
-            //    Console.WriteLine("Welcome to Capsule-Capsule");
-            //    Console.WriteLine("==========================");
-            //    Console.Write("Enter the number of capsules available: ");
-            //    int capacity = int.Parse(Console.ReadLine());
-            //    Console.WriteLine($"\nThere are {capacity} unoccupied capsules ready to be booked.");
+            //need to fix this set-up
+            bool initial = true;
+            while (initial)
+            {
+                Console.WriteLine("Welcome to Capsule-Capsule");
+                Console.WriteLine("==========================");
+                Console.Write("Enter the number of capsules available: ");
+                //
+                int capacitytest = int.Parse(Console.ReadLine());
+                Console.WriteLine($"\nThere are {capacitytest} unoccupied capsules ready to be booked.");
 
-            //    Console.Write("\n\nPress any key to continue ");
-            //    Console.ReadKey();
-            //    Console.Clear();
-            //    initial = false;
-            //}
+                Console.Write("\n\nPress any key to continue ");
+                Console.ReadKey();
+                Console.Clear();
+                initial = false;
+            }
+
+            //test
+            int capacity = 30;
+            string[] guestAndRoom = new string[capacity];
+            guestAndRoom[4] = "room 5 name";    //room 5, index 4
+            guestAndRoom[6] = "room 7 name";
+            guestAndRoom[29] = "room 30 name";
 
             Console.Clear();
             bool running = true;
@@ -54,13 +49,13 @@ namespace HotelAssessment
                 switch (choice)
                 {
                     case checkIn:
-                        //CheckIn();  //CheckIn(guestAndRoom)
+                        GuestCheckIn i = new GuestCheckIn();
+                        i.CheckIn(guestAndRoom, capacity);
                         break;
                     case checkOut:
                         //CheckOut();         //see 
                         break;
                     case viewGuests:
-                        int capacity = Initial();
                         GuestList g = new GuestList();
                         g.ViewGuest(capacity);      
                         break;
