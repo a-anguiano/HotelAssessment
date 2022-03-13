@@ -8,7 +8,7 @@ namespace HotelAssessment
 {
     class GuestList
     {
-        public void ViewGuest(string[] arrayGR, int capacity)
+        public void ViewGuest(string[] guestsArray, int capacity)
         {           
             bool isRunning = true;
             while (isRunning)
@@ -20,7 +20,7 @@ namespace HotelAssessment
 
                 int low5 = guestView - 5;
                 int high5 = guestView + 5;
-                string[] guestViewArray = arrayGR;
+                string[] guestViewArray = guestsArray;
 
                 if (guestView > capacity || guestView <= 0)
                 {
@@ -29,9 +29,9 @@ namespace HotelAssessment
 
                 else if (high5 > capacity)  
                 {
-                    for (int i = low5-1; i < arrayGR.Length; i++)    
+                    for (int i = low5-1; i < guestsArray.Length; i++)    
                     {
-                        if (String.IsNullOrEmpty(arrayGR[i]))
+                        if (String.IsNullOrEmpty(guestsArray[i]))
                         {
                             guestViewArray[i] = "[unoccupied]";
                             Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
@@ -48,7 +48,7 @@ namespace HotelAssessment
                 {
                     for (int i = 0; i < high5; i++)
                     {
-                        if (String.IsNullOrEmpty(arrayGR[i]))
+                        if (String.IsNullOrEmpty(guestsArray[i]))
                         {
                             guestViewArray[i] = "[unoccupied]";
                             Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
@@ -65,7 +65,7 @@ namespace HotelAssessment
                 {
                     for (int i = low5; i < high5; i++)      
                     {
-                        if (String.IsNullOrEmpty(arrayGR[i]))
+                        if (String.IsNullOrEmpty(guestsArray[i]))
                         {
                             guestViewArray[i] = "[unoccupied]";
                             Console.WriteLine($"{i + 1}: {guestViewArray[i]}");
@@ -82,7 +82,7 @@ namespace HotelAssessment
                 {
                     for (int i = low5-1; i < high5; i++)       
                     {
-                        if (String.IsNullOrEmpty(arrayGR[i]))
+                        if (String.IsNullOrEmpty(guestsArray[i]))
                         {
                             guestViewArray[i] = "[unoccupied]";
                             Console.WriteLine($"{i + 1}: {guestViewArray[i]}");

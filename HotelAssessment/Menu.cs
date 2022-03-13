@@ -13,7 +13,7 @@ namespace HotelAssessment
         private const string viewGuests = "3";
         private const string exit = "4";
 
-        public void Run(string[] guestAndRoom, int capacity)
+        public void Run(string[] guestsArray, int capacity)
         {
             Console.Clear();
             bool running = true;
@@ -27,22 +27,22 @@ namespace HotelAssessment
                     case checkIn:
                         Console.Clear();
                         GuestCheckIn i = new GuestCheckIn();
-                        i.CheckIn(guestAndRoom, capacity);
+                        i.CheckIn(guestsArray, capacity);
                         break;
                     case checkOut:
                         Console.Clear();
                         GuestCheckOut o = new GuestCheckOut();
-                        o.CheckOut(guestAndRoom, capacity);
+                        o.CheckOut(guestsArray, capacity);
                         break;
                     case viewGuests:
                         Console.Clear();
                         GuestList g = new GuestList();
-                        g.ViewGuest(guestAndRoom, capacity);      
+                        g.ViewGuest(guestsArray, capacity);      
                         break;
                     case exit:
                         Console.Clear();
                         Exit e = new Exit();
-                        e.ExitProgram(guestAndRoom, capacity);
+                        e.ExitProgram(guestsArray, capacity);
                         break;
                         default:
                         HandleUnknownInput();

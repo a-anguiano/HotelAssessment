@@ -8,7 +8,7 @@ namespace HotelAssessment
 {
     class GuestCheckIn
     {
-        public void CheckIn(string[] arrayGR, int capacity)
+        public void CheckIn(string[] guestsArray, int capacity)
         {
             bool isRunning = true;
 
@@ -21,11 +21,11 @@ namespace HotelAssessment
                 int newRoom = GuestList.EnterRoomNumber($"Capsule #[1-{capacity}]: ", capacity);
                 int i = newRoom - 1;
 
-                if (String.IsNullOrEmpty(arrayGR[i]))
+                if (String.IsNullOrEmpty(guestsArray[i]))
                 {
                     Console.WriteLine("\n\nSuccess :)");
                     Console.WriteLine($"{newGuest} is booked in capsule #{newRoom}.");
-                    arrayGR[i] = newGuest;
+                    guestsArray[i] = newGuest;
                     Console.Write("Press any key to continue ");
                     Console.ReadKey();
                     Console.Clear();

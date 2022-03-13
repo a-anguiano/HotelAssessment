@@ -12,17 +12,17 @@ namespace HotelAssessment
             {
                 Console.WriteLine("Welcome to Capsule-Capsule");
                 Console.WriteLine("==========================");
-                int capacitytest = GetPositiveInteger("Enter the number of capsules available: ");
+                int capacity = GetPositiveInteger("Enter the number of capsules available: ");
                 
                 
-                Console.WriteLine($"\nThere are {capacitytest} unoccupied capsules ready to be booked.");
-                string[] arrayGR = new string[capacitytest];
+                Console.WriteLine($"\nThere are {capacity} unoccupied capsules ready to be booked.");
+                string[] guestsArray = new string[capacity];
 
                 Console.Write("\n\nPress any key to continue ");
                 Console.ReadKey();
                 Console.Clear();
                 Menu m = new Menu();
-                m.Run(arrayGR,capacitytest);
+                m.Run(guestsArray,capacity);
             }
         public static int GetPositiveInteger(string prompt)
         {
