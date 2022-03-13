@@ -8,7 +8,6 @@ namespace HotelAssessment
 {
     class StartUp
     {
-            //need to fix this set-up
             public void Initial()
             {
                 Console.WriteLine("Welcome to Capsule-Capsule");
@@ -24,7 +23,6 @@ namespace HotelAssessment
                 Console.Clear();
                 Menu m = new Menu();
                 m.Run(arrayGR,capacitytest);
-                //return arrayGR;
         }
     }
 }

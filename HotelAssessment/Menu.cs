@@ -15,14 +15,6 @@ namespace HotelAssessment
 
         public void Run(string[] guestAndRoom, int capacity)
         {
-
-            //test
-            //int capacity = 30;
-            //string[] guestAndRoom = new string[capacity];
-            //guestAndRoom[4] = "room 5 name";    //room 5, index 4
-            //guestAndRoom[6] = "room 7 name";    //room 7, index 6    
-            //guestAndRoom[29] = "room 30 name";
-
             Console.Clear();
             bool running = true;
 

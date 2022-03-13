@@ -11,7 +11,6 @@ namespace HotelAssessment
         public void CheckIn(string[] arrayGR, int capacity)
         {
             bool isRunning = true;
-            //room5 index4, room7 index6, room 30, index29
 
             while (isRunning)
             {

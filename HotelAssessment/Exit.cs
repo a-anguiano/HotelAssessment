@@ -33,7 +33,7 @@ namespace HotelAssessment
                     Console.ReadKey();
                     Console.Clear();
                     Menu m = new Menu();
-                    m.Run(arrayGR, capacity);       //names of parameter/arguments
+                    m.Run(arrayGR, capacity);
                 }
             }
         }

@@ -12,8 +12,6 @@ namespace HotelAssessment
         {
             StartUp s = new StartUp();
             s.Initial();
-            //Menu m = new Menu();
-            //m.Run();
         }
     }
 }
