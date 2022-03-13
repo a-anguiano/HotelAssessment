@@ -11,10 +11,8 @@ namespace HotelAssessment
         public void ViewGuest(string[] arrayGR, int capacity)
         {
             Console.Clear();
-            //testing for ViewGuests
            
             bool isRunning = true;
-
             while (isRunning)
             {
                 Console.WriteLine("View Guests");
@@ -24,7 +22,7 @@ namespace HotelAssessment
 
                 int low5 = guestView - 5;
                 int high5 = guestView + 5;
-                string[] guestViewArray = arrayGR;     //label null as unnoccupied
+                string[] guestViewArray = arrayGR;
 
                 if (guestView > capacity || guestView <= 0)
                 {

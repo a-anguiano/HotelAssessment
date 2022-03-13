@@ -21,7 +21,7 @@ namespace HotelAssessment
                 int guestLeaveNum = int.Parse(Console.ReadLine());      //later TryParse
                 int index = guestLeaveNum - 1;
 
-                if (arrayGR[index] != null)
+                if (!String.IsNullOrEmpty(arrayGR[index]))
                 {
                     Console.WriteLine("\n\nSuccess :)");
                     Console.WriteLine($"{arrayGR[index]} checked out from capsule #{guestLeaveNum}.");

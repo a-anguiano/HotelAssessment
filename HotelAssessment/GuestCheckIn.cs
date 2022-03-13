@@ -23,15 +23,13 @@ namespace HotelAssessment
                 Console.Write($"Capsule #[1-{capacity}]: ");
                 int newRoom = int.Parse(Console.ReadLine());
                 int i = newRoom - 1;
-                //hmmmmmm what if Check In isn't first option
-                //something may be off, says empty rooms are occupied
 
                 if (String.IsNullOrEmpty(arrayGR[i]))
                 {
                     Console.WriteLine("\n\nSuccess :)");
                     Console.WriteLine($"{newGuest} is booked in capsule #{newRoom}.");
                     arrayGR[i] = newGuest;
-                }                                                               //update arrayGR
+                }                                                               
                 else
                 {
                     Console.WriteLine("\n\nError :(");
