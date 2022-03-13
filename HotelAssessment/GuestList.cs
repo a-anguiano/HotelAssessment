@@ -8,10 +8,11 @@ namespace HotelAssessment
 {
     class GuestList
     {
-        public void ViewGuest()
+        public void ViewGuest(int capacity)
         {
             Console.Clear();
-            int capacity = 30; //test
+            
+            //int capacity = 30; //test
             string[] arrayGR = new string[capacity];
             //testing for ViewGuests
             arrayGR[4] = "room 5 name";    //room 5, index 4

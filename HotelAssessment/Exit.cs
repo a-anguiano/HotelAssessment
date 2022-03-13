@@ -11,7 +11,6 @@ namespace HotelAssessment
         public void ExitProgram()
         {
             bool isRunning = true;
-            //number of times no is said, number of times needed to say yes before close
 
             while (isRunning)
             {
@@ -26,8 +25,6 @@ namespace HotelAssessment
                 if (response == "y")
                 {
                     Console.WriteLine("\n\nGoodbye!");
-                    //isRunning = false;
-                    //return false;   //may not need
                     System.Environment.Exit(1);
                 }
                 else
@@ -37,10 +34,8 @@ namespace HotelAssessment
                     Console.Clear();
                     Menu m = new Menu();
                     m.Run();
-                    //return true;
                 }
             }
-            //return false;
         }
     }
 }

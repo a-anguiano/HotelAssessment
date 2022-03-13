@@ -13,12 +13,36 @@ namespace HotelAssessment
         private const string viewGuests = "3";
         private const string exit = "4";
 
-        
+        public static int Initial()
+        {
+            Console.WriteLine("Welcome to Capsule-Capsule");
+            Console.WriteLine("==========================");
+            Console.Write("Enter the number of capsules available: ");
+            int capacity = int.Parse(Console.ReadLine());
+            Console.WriteLine($"\nThere are {capacity} unoccupied capsules ready to be booked.");
 
+            Console.Write("\n\nPress any key to continue ");
+            Console.ReadKey();
+            Console.Clear();
+            return capacity;
+        }
         public void Run()
         {
-                                //int capacity = StartUp.Initial();
-                                //string[] guestAndRoom = new string[capacity];
+            //string[] guestAndRoom = new string[capacity];
+            //bool initial = true;
+            //while(initial)
+            //{
+            //    Console.WriteLine("Welcome to Capsule-Capsule");
+            //    Console.WriteLine("==========================");
+            //    Console.Write("Enter the number of capsules available: ");
+            //    int capacity = int.Parse(Console.ReadLine());
+            //    Console.WriteLine($"\nThere are {capacity} unoccupied capsules ready to be booked.");
+
+            //    Console.Write("\n\nPress any key to continue ");
+            //    Console.ReadKey();
+            //    Console.Clear();
+            //    initial = false;
+            //}
 
             Console.Clear();
             bool running = true;
@@ -36,8 +60,9 @@ namespace HotelAssessment
                         //CheckOut();         //see 
                         break;
                     case viewGuests:
+                        int capacity = Initial();
                         GuestList g = new GuestList();
-                        g.ViewGuest();      //see
+                        g.ViewGuest(capacity);      
                         break;
                     case exit:
                         Exit e = new Exit();

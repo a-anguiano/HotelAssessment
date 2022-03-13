@@ -10,7 +10,7 @@ namespace HotelAssessment
     {
         static void Main()
         {
-            //StartUp.Initial();
+            Menu.Initial();
             Menu m = new Menu();
             m.Run();
         }
