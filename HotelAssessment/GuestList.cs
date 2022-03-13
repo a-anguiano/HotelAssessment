@@ -15,8 +15,10 @@ namespace HotelAssessment
             {
                 Console.WriteLine("View Guests");
                 Console.WriteLine("==============");
-                Console.Write($"Capsule #[1-{capacity}]: ");
-                int guestView = int.Parse(Console.ReadLine());
+
+                int guestView = EnterRoomNumber($"Capsule #[1-{capacity}]: ", capacity);
+                //Console.Write($"Capsule #[1-{capacity}]: ");
+                //int guestView = int.Parse(Console.ReadLine());
 
                 //need to handle non-existing room number, out of bounds basically
 
@@ -103,6 +105,34 @@ namespace HotelAssessment
                 Console.Clear();
                 isRunning = false;
             }
+        }
+
+        public static int EnterRoomNumber(string prompt, int capacity)
+        {
+            bool valid = false;
+            int value;
+
+            do
+            {
+                Console.Write(prompt);
+                if (!int.TryParse(Console.ReadLine(), out value))
+                {
+                    Console.WriteLine("\nThat wasn't a number!\n");
+                }
+                else
+                {
+                    if (value > 0 && value <= capacity)
+                    {
+                        valid = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nThat is not a valid room number.\n");
+                    }
+                }
+            } while (!valid);
+
+            return value;
         }
     }
 }
